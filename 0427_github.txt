@@ -1,0 +1,95 @@
+<github>
+
+・git bashからバージョンを確認
+
+・gitの初期設定
+githubで作成したアカウント名とメールアドレスを設定
+アカウント名：seigou2000
+メールアドレス：seigou0240@gmail.com
+
+・ロカールリポジトリの作成
+リポジトリとは、ファイルやディレクトリの状態、変更履歴を記録する場所
+git init コマンドでリポジトリを新規作成する
+
+.gitディレクトリが作成され、バージョン管理をしてくれる
+→隠しファイルである
+
+・基本的なワークフロー
+1.ファイルの変更をステージングエリア(控室)へ追加(git add)
+2.ローカルリポジトリにコミットする(自分のリポジトリにアップ)
+3.リモートリポジトリにプッシュする
+
+・git add ファイル名
+画面が切り替わる
+半角iで入力できるように
+Esc→:wq→Enter
+
+gitに作成したリポジトリを登録　intro_java
+git remote add origin https://github.com/Seigou2000/intro_java.git
+
+git branch -M main
+git push -u origin main
+
+・git add .で全部を追加できる
+git commitでメッセージ付きで記録
+原則：一つの作業ごとに1コミット
+
+1行目に変更内容の要約
+2行目に空行
+3行目に変更理由
+
+git add .により変更を全てステージに
+git commit -vにより変更点を確認しつつコミット
+
+git status
+git log：commitの履歴が見れる
+
+・いろいろな変更のコミット
+新規作成、削除、複数ファイルの変更
+
+削除したファイル
+git addではなく、git rm ファイル名
+
+複数ファイル
+git add .
+
+・git statusコマンドでgitリポジトリの状況を確認
+ブランチの設定：masterは複数人で作業する際に必要
+コミットの状況(commit待ちやpush待ち)
+変更点の有無
+
+・git logのオプション
+git log --oneline：一行で表示
+git log -p ファイル名：差分を表示
+qキーで終了
+
+・git diffコマンドでファイルの変更差分を表示
+git diff HEAD：ステージとコミットの差分
+
+・リモートリポジトリ(=github)に登録
+git remote add 名前 https://~~
+今後は設定した名前でgithubレポジトリにアクセス可能
+
+名前は、originaが一般的
+
+git push origin ブランチ名
+
+・gitで管理しないファイルを管理から外す
+.gitignoreファイルに指定することでファイルをgitの管理から外すことができる
+自動生成されるファイル
+パスワードが記載されているファイル
+
+・コミットしてしまったファイルを管理から外す
+git rm ファイル名
+git rm -r ディレクトリ名：ディレクトリも削除
+
+☆ローカルにファイルは残すけど、git上から削除する場合
+git rm --cached ファイル名
+→.gitignoreファイルに設定する
+
+→これ以上
+git
+チーム開発で必要なgitハンズオンで完全マスター(講義)
+Attlassiann社のGitチュートリアル
+
+
